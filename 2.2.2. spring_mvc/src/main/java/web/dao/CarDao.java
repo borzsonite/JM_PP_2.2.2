@@ -20,16 +20,6 @@ public class CarDao {
         cars.add(new Car("Kia", "red", 3));
     }
 
-//    public List<Car> getCars() {
-//        return cars;
-//    }
-//
-//    public List<Car> getNumberOfCars(int number) {
-//        if(number > 0 && number <5) {
-//            return (List<Car>) cars.stream().limit(number).collect(Collectors.toList());
-//        } else return cars;
-//    }
-
     public List<Car> getCars(int number) {
         if (number > 0 && number < 5) {
             return (List<Car>) cars.stream().limit(number).collect(Collectors.toList());
