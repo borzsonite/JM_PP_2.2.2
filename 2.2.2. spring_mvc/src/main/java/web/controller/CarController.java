@@ -17,16 +17,14 @@ public class CarController {
     CarDao carDao;
 
     @GetMapping()
-    public String getAllCars(Model model) {
-        model.addAttribute("carList", carDao.getCars());
-        System.out.println(carDao.getCars());
+    public String getNumberOfCars(@RequestParam(value = "count", required = false) Integer number, Model model) {
+        if(number==null) {
+            model.addAttribute("carList", carDao.getCars(0));
+        } else {
+            model.addAttribute("carList", carDao.getCars(number));
+        }
         return "car";
-    }
 
-    @GetMapping("/{count}")
-    public String getCars(@PathVariable("count") int count, Model model) {
-        System.out.println("!!!!!!!!!!  " + count);
-        return null;
     }
 
 }
