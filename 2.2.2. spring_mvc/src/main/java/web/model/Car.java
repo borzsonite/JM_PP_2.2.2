@@ -37,4 +37,12 @@ public class Car {
     public void setSerial(int serial) {
         this.serial = serial;
     }
+
+    @Override
+    public String toString() {
+        return "Car id:" + id +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", serial=" + serial;
+    }
 }
